@@ -1,4 +1,4 @@
-import numpy
+import numpy as np
 
 # Follow the tasks below to practice basic Python concepts.
 # Write your code in between the dashed lines.
@@ -13,8 +13,14 @@ import numpy
 # Your code here:
 # -----------------------------------------------
 
-def step
+def step(x):
+    if x > 0:
+        return 1
+    else:
+        return -1
 
+#larger than 0 gets 1
+#zero and smaller gets -1
 
 # -----------------------------------------------
 
@@ -28,8 +34,10 @@ def step
 
 # Your code here:
 # -----------------------------------------------
-def ReLu
-
+def ReLu(x, cutoff=0):
+    return np.maximum(x, cutoff)
+# smaller than cutoff gets cutoff value, so now zero
+# larger than cutoff is left the same
 
 # -----------------------------------------------
 
@@ -43,8 +51,12 @@ def ReLu
 
 # Your code here:
 # -----------------------------------------------
+def neural_net_layer(x, weights):
+    result_matrix = np.dot(x, weights) 
+    return ReLu(result_matrix)
 
-def neural_net_layer
+# first make a dot product
+# then apply ReLu to the result
 
 
 # ------------------------------------------
